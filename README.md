@@ -2,6 +2,7 @@
 Cowin-bot automates the slot booking
 
 ### Instructions
+#### If you're using Windows or Mac, head to the Notes section at the bottom of the page
 1. Clone this Repository. 
 ```
 git clone https://github.com/akss13/cowin-bot.git
@@ -9,18 +10,18 @@ git clone https://github.com/akss13/cowin-bot.git
 + You can also download the Zip manually from the green ```Code``` section above, beside ```Add file```.
 
 
-2. Create python virtual environment 
+2. Create python virtual environment in the same path you cloned this repository, or Extracted the downloaded file.
 ```
 python -m venv env 
 ```
 + ```env``` here is the name of the virtual environment.
 
 
-3.  Source/activate virtual environment
+3.  Source/activate the virtual environment.
 ```
 source env/bin/activate
 ```
-+ To deactivate ```deactivate```
++ Incase you want to deactivate, just type ```deactivate```
 
 4. Install python dependencies
 ```
