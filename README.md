@@ -32,7 +32,7 @@ Should be like this for the second profile just created ->
 /home/user/.config/google-chrome/Profile 1
 ```
 9. Change the variable ```profile_path``` in ```driver.py```
-+ For example ```/home/user/.config/google-chrome/Profile 1``` would be as follows: ```"/home/akss13/.config/google-chrome/Profile\ 1/"```
++ For example ```/home/user/.config/google-chrome/Profile 1``` would be as follows: ```"/home/user/.config/google-chrome/Profile\ 1/"```
 10. Run the driver script ```./driver.py```
 
 ### Dependencies
