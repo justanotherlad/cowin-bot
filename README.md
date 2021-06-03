@@ -42,7 +42,7 @@ Should be like this for the second profile just created ->
 /home/user/.config/google-chrome/Profile 1
 ```
 
-10. Generate your Telegram ```api_id``` and ```api_hash``` as per instructions given [here](https://docs.telethon.dev/en/latest/basic/signing-in.html)(Refer to the ```Signing In``` section). If you are using Telegram from browser, you will have to select ```Web App``` while generating the hash, or else if you're using Telegram desktop select accordingly.
+10. Generate your Telegram ```api_id``` and ```api_hash``` as per instructions given [here](https://docs.telethon.dev/en/latest/basic/signing-in.html) (Refer to the ```Signing In``` section). If you are using Telegram from browser, you will have to select ```Web App``` while generating the hash, or else if you're using Telegram desktop select accordingly.
 
 11. Change the locations in ```profile_path``` in line 32, ```driver``` in line 46, ```your_mob_no``` in line 60, ```search_otp``` in line 78 (all messages from CoWIN come in the form ```XX-NHPSMS``` .Check what is yours),  ```api_id``` and ```api_hash``` in line 150 and 151 resp., and ```chats``` in line 154 (Refer to **Notes** at the bottom of this page to know how to set this chat-id) in the file  ```driver.py```
 + For example ```/home/user/.config/google-chrome/Profile 1``` would be as follows: ```"/home/user/.config/google-chrome/Profile\ 1/"``` . Note the extra ```\``` you have to add after ```Profile```.
