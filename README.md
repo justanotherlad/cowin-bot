@@ -71,6 +71,7 @@ sudo apt-get install -y python3-dev libasound2-dev bsdtar curl git clang lib{jpe
 + Currently the work is done and tested on Ubuntu and Ubuntu based distros.\
 
 \
+
 \
 
 ### DECLARATION
