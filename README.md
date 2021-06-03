@@ -1,5 +1,5 @@
 # cowin-bot
-Cowin-bot automates the slot booking
+Cowin-bot automates the slot booking trigerred by U45/A45 Telegram alerts.
 
 #### If you're using Windows or Mac, head to the Notes section at the bottom of the page
 
