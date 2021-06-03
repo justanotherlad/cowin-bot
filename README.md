@@ -36,10 +36,14 @@ Should be like this for the second profile just created ->
 10. Run the driver script ```./driver.py```
 
 ### Dependencies
-+ python 3.9+
-+ bsdtar 
-+ curl
 + pip
++ bdstar
++ curl
++ python 3
++ selenium
++ telethon
++ beepy
+
 
 ### Note 
 + Work done, created and tested on a <b>linux x86_64</b> platform.
