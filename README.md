@@ -27,7 +27,7 @@ source env/bin/activate
 
 4. Install python dependencies
 ```
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 5. To fetch chromedriver locally run
 ```
@@ -56,14 +56,16 @@ Should be like this for the second profile just created ->
 + After that, whenever you run this code in the background, a Chrome browser should open up and wait. Whenever an alert comes in your U45 or A45 channel (if you're not in your U45 or A45 Telegram channel, refer to the **Notes** section at the bottom of the page), it should automatically start booking the slot triggered by the Telegram alert, till a Captcha comes up. You will have to just manually type the Captcha and press the ```Confirm``` button.
 
 ### Dependencies
-+ pip
-+ bdstar
-+ curl
-+ git
-+ python 3
+Insall system dependencies using the following commands:  
+```
+sudo apt update
+sudo apt-get install -y python3-dev libasound2-dev bsdtar curl git clang lib{jpeg-turbo,webp}-dev python{,-dev} zlib-dev python3-pip 
+```
+
 
 ### Note 
 + You will have to subscribe to the Under45/Above45 Telegram channel for this bot to work. If you're already not, head over to [under45.in](https://under45.in/) or [over45.in](https://above45.in/) as per your requirement, and select your State and District and join the channel.
 + If you don't know the ```chats``` id of your U45/A45 Telegram channel, head over to [web.telegram.org](web.telegram.org), click the A45/U45 channel, look into the URL, select the number in between the first alphabet and ```_```, and prepend a ```-100``` to it. E.g, if it's like ```im?p=c1360446581_9134768783849311356```, the ```chat``` id should be ```-1001360446581```.
 + Work is done, created and tested on a <b>linux x86_64</b> platform. If you're using WIndows or Mac, we suggest downloading a ```VirtualBox``` ([wikihow](https://www.wikihow.com/Install-VirtualBox)) and setting up ```Ubuntu``` in that VirtualBox ([wikihow](https://www.wikihow.com/Install-Ubuntu-on-VirtualBox)).
 + ```./fetch_chromedriver.sh``` fetches chromedriver for linux64. To make it work for your system, change the variable ```PLATFORM``` inside the script accordingly.
++ Currently the work is done and tested on Ubuntu and Ubuntu based distros.
