@@ -69,5 +69,5 @@ Should be like this for the second profile just created ->
 ### Note 
 + You will have to subscribe to the Under45/Above45 Telegram channel for this bot to work. If you're already not, head over to [under45.in](https://under45.in/) or [over45.in](https://above45.in/) as per your requirement, and select your State and District and join the channel.
 + If you don't know the ```chats``` id of your U45/A45 Telegram channel, head over to [web.telegram.org](web.telegram.org), click the A45/U45 channel, look into the URL, select the number in between the first alphabet and ```_```, and prepend a ```-100``` to it. E.g, if it's like ```im?p=c1360446581_9134768783849311356```, the ```chat``` id should be ```-1001360446581```.
-+ Work is done, created and tested on a <b>linux x86_64</b> platform.
++ Work is done, created and tested on a <b>linux x86_64</b> platform. If you're using WIndows or Mac, we suggest downloading a ```VirtualBox``` ([wikihow](https://www.wikihow.com/Install-VirtualBox)) and setting up ```Ubuntu``` in that VirtualBox ([wikihow](https://www.wikihow.com/Install-Ubuntu-on-VirtualBox)).
 + ```./fetch_chromedriver.sh``` fetches chromedriver for linux64. To make it work for your system, change the variable ```PLATFORM``` inside the script accordingly.
