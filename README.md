@@ -69,14 +69,15 @@ sudo apt-get install -y python3-dev libasound2-dev bsdtar curl git clang lib{jpe
 + Work is done, created and tested on a <b>linux x86_64</b> platform. If you're using WIndows or Mac, we suggest downloading a ```VirtualBox``` ([wikihow](https://www.wikihow.com/Install-VirtualBox)) and setting up ```Ubuntu``` in that VirtualBox ([wikihow](https://www.wikihow.com/Install-Ubuntu-on-VirtualBox)).
 + ```./fetch_chromedriver.sh``` fetches chromedriver for linux64. To make it work for your system, change the variable ```PLATFORM``` inside the script accordingly.
 + Currently the work is done and tested on Ubuntu and Ubuntu based distros.\
-\
 
+\
+\
 
 ### DECLARATION
 This Bot is a free-service, licensed under ```GNU General Public License v3.0```, which basically means
-+ if you're modifying the code, you need to state the changes
-+ if you're using it personally, you need to disclose the source
-+ if you're distributing it, it should be under the same license
++ if you're modifying the code, you need to state the changes.
++ if you're using it personally, you need to disclose the source.
++ if you're distributing it, it should be under the same license.
 
 **NEVER PAY ANYONE** to book slots.\
 Share Aadhar information at your own risk only with trusted individuals whom you know personally.
