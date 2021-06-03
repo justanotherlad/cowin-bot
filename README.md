@@ -1,8 +1,10 @@
 # cowin-bot
 Cowin-bot automates the slot booking
 
-### Instructions
 #### If you're using Windows or Mac, head to the Notes section at the bottom of the page
+
+
+### Instructions
 1. Clone this Repository. 
 ```
 git clone https://github.com/akss13/cowin-bot.git
