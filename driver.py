@@ -104,7 +104,10 @@ def fetch_otp():
 def login_cowin():
 	driver.find_element_by_tag_name("ion-button").click()
 	time.sleep(3)
-	element=driver.find_element_by_xpath("//span[.='"+"Schedule"+"']").click()
+	order_in_cowin=1	#give the order no. of the person you're trying to Schedule the slot for as per
+						#your CoWIN dashboard, i.e, if you're trying to Schedule for the 2nd person
+						#in your dashboard, type 2
+	element=driver.find_elements_by_xpath("//span[.='"+"Schedule"+"']")[order_in_cowin-1].click()
 	#driver.find_element_by_class_name("calcls").click()
 	time.sleep(1)
 
@@ -118,8 +121,10 @@ def search_by_pincode(pin):
 
 
 def book_available_slot():
-	element=driver.find_element_by_xpath("//a[.='"+"Booked"+"']").click()
-
+	driver.find_element_by_xpath("//div[contains(@class, 'slots-box ng-star-inserted')]").click()
+	#actions = ActionChains(driver)
+	#actions.move_to_element(my_element).perform()
+	#driver.execute_script("arguments[0].scrollIntoView();", my_element)
 
 
 def select_time():
