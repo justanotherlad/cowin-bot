@@ -53,7 +53,7 @@ Should be like this for the second profile just created ->
 
 #### What will happen?
 + You might have to sign up using your Telegram credentials (Note: Always use +91 before your mobile no.) from terminal once to verify.
-+ After that, whenever you run this code in the background, a Chrome browser should open up and wait. Whenever an alert comes in your U45 or A45 channel (if you're not in your U45 or A45 Telegram channel, refer to the **Notes** section at the bottom of the page), it should automatically start booking the slot triggered by the Telegram alert till a Captcha comes up. You will have to just manually type the Captcha and press the ```Confirm``` button.
++ After that, whenever you run this code in the background, a Chrome browser should open up and wait. Whenever an alert comes in your U45 or A45 channel (if you're not in your U45 or A45 Telegram channel, refer to the **Notes** section at the bottom of the page), it should automatically start booking the slot triggered by the Telegram alert, till a Captcha comes up. You will have to just manually type the Captcha and press the ```Confirm``` button.
 
 ### Dependencies
 + pip
