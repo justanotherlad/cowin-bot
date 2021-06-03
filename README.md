@@ -61,10 +61,6 @@ Should be like this for the second profile just created ->
 + curl
 + git
 + python 3
-+ selenium
-+ telethon
-+ beepy
-
 
 ### Note 
 + You will have to subscribe to the Under45/Above45 Telegram channel for this bot to work. If you're already not, head over to [under45.in](https://under45.in/) or [over45.in](https://above45.in/) as per your requirement, and select your State and District and join the channel.
