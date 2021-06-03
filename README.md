@@ -70,9 +70,9 @@ sudo apt-get install -y python3-dev libasound2-dev bsdtar curl git clang lib{jpe
 + ```./fetch_chromedriver.sh``` fetches chromedriver for linux64. To make it work for your system, change the variable ```PLATFORM``` inside the script accordingly.
 + Currently the work is done and tested on Ubuntu and Ubuntu based distros.\
 
-\
 
-\
+
+
 
 ### DECLARATION
 This Bot is a free-service, licensed under ```GNU General Public License v3.0```, which basically means
