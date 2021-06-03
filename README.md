@@ -23,7 +23,7 @@ python -m venv env
 ```
 source env/bin/activate
 ```
-+ Incase you want to deactivate, just type ```deactivate```
++ Incase you want to deactivate later, just type ```deactivate```
 
 4. Install python dependencies
 ```
