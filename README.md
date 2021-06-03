@@ -41,10 +41,18 @@ Should be like this for the second profile just created ->
 ```
 /home/user/.config/google-chrome/Profile 1
 ```
+
 10. Generate your Telegram ```api_id``` and ```api_hash``` as per instructions given [here](https://docs.telethon.dev/en/latest/basic/signing-in.html)(Refer to the ```Signing In``` section). If you are using Telegram from browser, you will have to select ```Web App``` while generating the hash, or else if you're using Telegram desktop select accordingly.
-11. Change the locations in ```profile_path``` in line 32, ```driver``` in line 46, ```your_mob_no``` in line 60, ```search_otp``` in line 78 (all messages from CoWIN come in the form ```XX-NHPSMS``` .Check what is yours),  ```api_id``` and ```api_hash``` in line 150 and 151 resp., and ```chats``` in line 154 in the file  ```driver.py```
+
+11. Change the locations in ```profile_path``` in line 32, ```driver``` in line 46, ```your_mob_no``` in line 60, ```search_otp``` in line 78 (all messages from CoWIN come in the form ```XX-NHPSMS``` .Check what is yours),  ```api_id``` and ```api_hash``` in line 150 and 151 resp., and ```chats``` in line 154 (Refer to **Notes** at the bottom of this page to know how to set this chat-id) in the file  ```driver.py```
 + For example ```/home/user/.config/google-chrome/Profile 1``` would be as follows: ```"/home/user/.config/google-chrome/Profile\ 1/"``` . Note the extra ```\``` you have to add after ```Profile```.
-12. Run the driver script ```./driver.py```
+
+12. Run the driver script ```./driver.py``` from terminal.
+
+
+#### What will happen?
++ You might have to sign up using your Telegram credentials (Note: Always use +91 before your mobile no.) from terminal once to verify.
++ After that, whenever you run this code in the background, a Chrome browser should open up and wait. Whenever an alert comes in your U45 or A45 channel (if you're not in your U45 or A45 Telegram channel, refer to the **Notes** section at the bottom of the page), it should automatically start booking the slot triggered by the Telegram alert till a Captcha comes up. You will have to just manually type the Captcha and press the ```Confirm``` button.
 
 ### Dependencies
 + pip
@@ -58,5 +66,7 @@ Should be like this for the second profile just created ->
 
 
 ### Note 
++ You will have to subscribe to the Under45/Above45 Telegram channel for this bot to work. If you're already not, head over to [under45.in](https://under45.in/) or [over45.in](https://above45.in/) as per your requirement, and select your State and District and join the channel.
++ If you don't know the ```chats``` id of your U45/A45 Telegram channel, head over to [web.telegram.org](web.telegram.org)), click the A45/U45 channel, look into the URL, select the number in between the first alphabet and ```_```, and prepend a ```-100``` to it. E.g, if it's like ```im?p=c1360446581_9134768783849311356```, the ```chat``` id should be ```-1001360446581```.
 + Work done, created and tested on a <b>linux x86_64</b> platform.
 + ```./fetch_chromedriver.sh``` fetches chromedriver for linux64. To make it work for your system, change the variable ```PLATFORM``` inside the script accordingly.
