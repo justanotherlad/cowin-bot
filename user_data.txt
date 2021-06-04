@@ -1,0 +1,14 @@
+# Your mobile number
+9982529028
+# Chrome profile path
+/home/akss13/.config/google-chrome/Profile 1
+# Web messages thread name ex:AX-NHPSMS
+AX-NHPSMS
+# pincode
+302020
+# start date
+04-06-2021
+# User order in cowin website
+1
+# User Schedule/Reschedule Ex:Schedule Ex:Reschedule
+Schedule
