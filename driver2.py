@@ -7,6 +7,7 @@ from selenium.webdriver import ActionChains
 import requests
 import shutil
 from datetime import datetime, timedelta
+import subprocess
 
 # change ---------------------------------<--->
 your_mob_no = ""  # ENTER YOUR MOBILE NO. HERE
@@ -42,6 +43,11 @@ def read_userdata():
 
 
 def create_profile_dir():
+    # chrome driver check
+    chrome_driver_check = os.path.exists("./env/bin/chromedriver")
+    if(chrome_driver_check == False):
+        subprocess.run(["./fetch_chromedriver.sh"], shell=True)
+    # profile directory check
     check_dir = os.path.isdir("./profile_dir")
     # print(check_dir)
     if(check_dir == True):

@@ -1,11 +1,11 @@
-# Your mobile number
-9982529028
+# Your 10 digit mobile number
+9xxxxxxxxx
 # Chrome profile path
-/home/akss13/.config/google-chrome/Profile 1
+/home/$user/.config/google-chrome/Profile 1
 # Web messages thread name ex:AX-NHPSMS
 AX-NHPSMS
 # pincode
-302020
+602020
 # start date
 04-06-2021
 # User order in cowin website
