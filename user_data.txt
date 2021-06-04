@@ -5,10 +5,14 @@
 # Web messages thread name ex:AX-NHPSMS
 AX-NHPSMS
 # pincode
-602020
-# start date
+123123
+# Enter today's date
 04-06-2021
 # User order in cowin website
 1
 # User Schedule/Reschedule Ex:Schedule Ex:Reschedule
 Schedule
+# Enter age limit Enter 18 or 45
+18
+# Enter dose-1 or dose-2 Ex:1 Ex:2
+1

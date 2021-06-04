@@ -17,6 +17,8 @@ search_otp_thread = ""
 #####
 pin_c = ""
 date_c = ""
+age_limit = ""
+dose_stage = ""
 #########################################
 order_in_cowin = 1
 schedule_or_reschedule = "Schedule"
@@ -32,7 +34,7 @@ def read_userdata():
     file_contents = file.read()
     contents_split = file_contents.splitlines()
     file.close()
-    global your_mob_no, profile_path, search_otp_thread, pin_c, date_c, order_in_cowin, schedule_or_reschedule
+    global your_mob_no, profile_path, search_otp_thread, pin_c, date_c, order_in_cowin, schedule_or_reschedule, age_limit, dose_stage
     your_mob_no = contents_split[1]
     profile_path = contents_split[3]
     search_otp_thread = contents_split[5]
@@ -40,6 +42,12 @@ def read_userdata():
     date_c = contents_split[9]
     order_in_cowin = int(contents_split[11])
     schedule_or_reschedule = contents_split[13]
+    age_limit = int(contents_split[15])
+    dose_stage = contents_split[17]
+    if(dose_stage == '1'):
+        dose_stage = 'available_capacity_dose1'
+    else:
+        dose_stage = 'available_capacity_dose2'
 
 
 def create_profile_dir():
@@ -64,20 +72,23 @@ def get_availability():
     for i in duration:
         date_i = (datetime.strptime(date_c, '%d-%m-%Y') +
                   timedelta(days=i)).strftime('%d-%m-%Y')
+        print(date_i)
         url = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByPin?pincode=" + \
             pin_c+"&date="+date_i
         headers = {'accept': 'application/json', 'Accept-Language': 'en_US'}
         r = requests.get(url, headers=headers)
         # print(r)
         r = r.json()
-        # data = json.load(r)
         for i in r['sessions']:
-            dose_available = int(i['available_capacity_dose1'])
+            dose_available = int(i[dose_stage])
+            age_temp = int(i['min_age_limit'])
+            # print("dose_available:")
+            print("dose_available ")
             print(dose_available)
-            if(dose_available > 0):
+            print("age_temp ")
+            print(age_temp)
+            if (dose_available > 0 and age_temp == age_limit):
                 return True
-
-        return False
 
 
 def send_otp():
@@ -154,13 +165,13 @@ while True:
     if(res == True):
         break
 
-create_profile_dir()
-driver = webdriver.Chrome(
-    executable_path="./env/bin/chromedriver", options=options)
-send_otp()
-change_tab()
-fetch_otp()
-login_cowin()
-search_by_pincode()
-book_available_slot()
-select_time()
+# create_profile_dir()
+# driver = webdriver.Chrome(
+#     executable_path="./env/bin/chromedriver", options=options)
+# send_otp()
+# change_tab()
+# fetch_otp()
+# login_cowin()
+# search_by_pincode()
+# book_available_slot()
+# select_time()
