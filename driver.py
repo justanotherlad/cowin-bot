@@ -26,7 +26,6 @@ import re
 
 options = Options()
 
-# options.headless = True
 
 
 profile_path="/home/username/.config/google-chrome/Profile\ 1/" #change it to your Profile Path after 
@@ -34,7 +33,6 @@ profile_path="/home/username/.config/google-chrome/Profile\ 1/" #change it to yo
                                                                        #"chrome://version/" in the browser 
 check_dir=os.path.isdir("./profile_dir")
 
-#print(check_dir)
 if(check_dir==True):
     os.system("rm -rdf ./profile_dir")
 os.system("mkdir profile_dir")
@@ -45,7 +43,6 @@ options.add_argument("--profile-directory=Profile 1")
 
 driver = webdriver.Chrome(executable_path="/home/username/Desktop/chromedriver", options=options)	#change this path
 																				#to where your chromedriver is stored
-
 
 
 
@@ -104,11 +101,16 @@ def fetch_otp():
 def login_cowin():
 	driver.find_element_by_tag_name("ion-button").click()
 	time.sleep(3)
+	schedule_or_reschedule="Schedule"	#write "Reschedule" if you're rescheduling
 	order_in_cowin=1	#give the order no. of the person you're trying to Schedule the slot for as per
 						#your CoWIN dashboard, i.e, if you're trying to Schedule for the 2nd person
 						#in your dashboard, type 2
-	element=driver.find_elements_by_xpath("//span[.='"+"Schedule"+"']")[order_in_cowin-1].click()
-	#driver.find_element_by_class_name("calcls").click()
+						#Note: If the 2nd person in your dashboard has an option to only reschedule,
+						#and the 3rd person has an option of schedule, and if you're trying to "Schedule"
+						#for this 3rd person, then you should give 2, because of all the persons having
+						#an option to "Schedule" a slot in your dashboard, he is the 2nd person.
+	element=driver.find_elements_by_xpath("//span[.='"+schedule_or_reschedule+"']")[order_in_cowin-1]
+	ActionChains(driver).move_to_element(element).click(element).perform()
 	time.sleep(1)
 
 
@@ -121,14 +123,16 @@ def search_by_pincode(pin):
 
 
 def book_available_slot():
-	driver.find_element_by_xpath("//div[contains(@class, 'slots-box ng-star-inserted')]").click()
-	#actions = ActionChains(driver)
-	#actions.move_to_element(my_element).perform()
-	#driver.execute_script("arguments[0].scrollIntoView();", my_element)
+	time.sleep(10)
+	element=driver.find_element_by_xpath("//div[contains(@class, 'slots-box less-seat ng-star-inserted') or contains(@class, 'slots-box ng-star-inserted')]")
+	ActionChains(driver).move_to_element(element).click(element).perform()	
+
 
 
 def select_time():
-	driver.find_element_by_tag_name("ion-button").click()
+	driver.find_elements_by_tag_name("ion-button")[-2].click()
+	time.sleep(1)
+	driver.find_elements_by_tag_name("ion-button")[-1].click()
 
 
 
@@ -153,22 +157,24 @@ def book_slot(pin):
 
 #---------------------------------C A L L    F U N C T I O N S-----------------------------#
 
-api_id = ...	#put your Telegram api_id
+api_id = ...		#put your Telegram api_id
 api_hash = '...'	#put your Telegram api_hash
 client = TelegramClient('anon', api_id, api_hash)
 
 @client.on(events.NewMessage(chats=...))	#push your chat ID.For channels it should begin with -100,
 async def my_event_handler(event):			#for groups with -, and for user, it should be a string, i.e, 'username'
-    #print(event.raw_text)
-    if len(event.raw_text)>0:
-    	regex = re.compile(r"(7\d{5})")		#change first digit of Pincode if you're not from Kolkata
-    	pinc=regex.search(event.raw_text).group(1)
-    	p1 = Process(target=play_alarm)
-    	p1.start()
-    	p2 = Process(target=book_slot(pinc))
-    	p2.start()
-    	p1.join()
-    	p2.join()
+    if len(event.raw_text) > 0:
+        try:
+            regex = re.compile(r"(7\d{5})")			#if you're outside Kolkata, change first digit of PIN from 7
+            pinc = regex.search(event.raw_text).group(1)
+            p1 = Process(target=play_alarm)
+            p1.start()
+            p2 = Process(target=book_slot(pinc))
+            p2.start()
+            p1.join()
+            p2.join()
+        except:
+            time.sleep(10 * 60)
 
 
 client.start()
