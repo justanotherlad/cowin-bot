@@ -165,13 +165,13 @@ while True:
     if(res == True):
         break
 
-# create_profile_dir()
-# driver = webdriver.Chrome(
-#     executable_path="./env/bin/chromedriver", options=options)
-# send_otp()
-# change_tab()
-# fetch_otp()
-# login_cowin()
-# search_by_pincode()
-# book_available_slot()
-# select_time()
+create_profile_dir()
+driver = webdriver.Chrome(
+    executable_path="./env/bin/chromedriver", options=options)
+send_otp()
+change_tab()
+fetch_otp()
+login_cowin()
+search_by_pincode()
+book_available_slot()
+select_time()
