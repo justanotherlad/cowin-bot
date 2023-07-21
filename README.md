@@ -61,7 +61,9 @@ Should be like this for the second profile just created ->
 + After that, whenever you run this code in the background, a Chrome browser should open up and wait. Whenever an alert comes in your U45 or A45 channel (if you're not in your U45 or A45 Telegram channel, refer to the **Notes** section at the bottom of the page), it should automatically start booking the slot triggered by the Telegram alert, till a Captcha comes up. You will have to just manually type the Captcha and press the ```Confirm``` button.
 
 #### CoWIN slot-booking bot in action
-https://user-images.githubusercontent.com/31207633/121130602-44aa1900-c84c-11eb-8534-094018e9bb72.mp4
+https://github.com/justanotherlad/cowin-bot/assets/31207633/3ff6f411-3a8e-4742-b0a0-ca2fc88925d0
+
+
 
 ### Dependencies
 Insall system dependencies using the following commands:  
